@@ -1,3 +1,5 @@
+// MIT TASK L
+
 function reverseSentence(str: string): string {
   return str
     .split(" ")
