@@ -1,10 +1,24 @@
-// MIT TASK L
-
-function reverseSentence(str: string): string {
-  return str
-    .split(" ")
-    .map(word => word.split("").reverse().join(""))
-    .join(" ");
+// MIT TASK M
+function getSquareNumbers(
+  numbers: number[],
+): { number: number; square: number }[] {
+  return numbers.map((num) => ({
+    number: num,
+    square: num * num,
+  }));
 }
 
-console.log(reverseSentence("we like coding!")); // "ew ekil !gnidoc"
+// TEST
+console.log(getSquareNumbers([1, 2, 3]));
+// [{number: 1, square: 1}, {number: 2, square: 4}, {number: 3, square: 9}]
+
+// // MIT TASK L
+
+// function reverseSentence(str: string): string {
+//   return str
+//     .split(" ")
+//     .map(word => word.split("").reverse().join(""))
+//     .join(" ");
+// }
+
+// console.log(reverseSentence("we like coding!")); // "ew ekil !gnidoc"
