@@ -1,11 +1,24 @@
-// MIT TASK N
-function palindromCheck(str: string): boolean {
-  const reversed: string = str.split("").reverse().join("");
-  return str === reversed;
-}
-console.log(palindromCheck("dad")); // true
-console.log(palindromCheck("racecar")); // true
-console.log(palindromCheck("son")); // false
+/* Project Standarts:
+  - Logging standarts
+  - Naming Standarts
+        function, method, variable => CAMEL case    goHome
+        class => PASCAL                             MemberService
+        folder => KEBAB
+        css => SNAKE                                button
+  - Error handling
+
+
+
+*/
+
+// // MIT TASK N
+// function palindromCheck(str: string): boolean {
+//   const reversed: string = str.split("").reverse().join("");
+//   return str === reversed;
+// }
+// console.log(palindromCheck("dad")); // true
+// console.log(palindromCheck("racecar")); // true
+// console.log(palindromCheck("son")); // false
 
 // // MIT TASK M
 // function getSquareNumbers(
