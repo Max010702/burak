@@ -11,6 +11,12 @@
 
 */
 
+/* 
+  Traditional API
+  Rest Api
+  GraphQl Api
+*/
+
 // // MIT TASK N
 // function palindromCheck(str: string): boolean {
 //   const reversed: string = str.split("").reverse().join("");
