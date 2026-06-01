@@ -1,3 +1,12 @@
+// MIT TASK O
+function calculateSumOfNumbers(arr: any[]): number {
+  return arr
+    .filter((item): item is number => typeof item === "number")
+    .reduce((sum: number, item: number) => sum + item, 0);
+}
+
+console.log(calculateSumOfNumbers([10, "10", { son: 10 }, true, 35])); // 45
+
 /* Project Standarts:
   - Logging standarts
   - Naming Standarts
