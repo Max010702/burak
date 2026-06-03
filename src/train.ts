@@ -1,11 +1,18 @@
-// MIT TASK O
-function calculateSumOfNumbers(arr: any[]): number {
-  return arr
-    .filter((item): item is number => typeof item === "number")
-    .reduce((sum: number, item: number) => sum + item, 0);
+// MIT TASK P
+function objectToArray(obj: Record<string, number>): [string, number][] {
+  return Object.entries(obj);
 }
 
-console.log(calculateSumOfNumbers([10, "10", { son: 10 }, true, 35])); // 45
+console.log(objectToArray({ a: 10, b: 20 })); // [["a", 10], ["b", 20]]
+
+// // MIT TASK O
+// function calculateSumOfNumbers(arr: any[]): number {
+//   return arr
+//     .filter((item): item is number => typeof item === "number")
+//     .reduce((sum: number, item: number) => sum + item, 0);
+// }
+
+// console.log(calculateSumOfNumbers([10, "10", { son: 10 }, true, 35])); // 45
 
 /* Project Standarts:
   - Logging standarts
