@@ -1,3 +1,8 @@
+/* 
+  Traditional Frontend Development.   =>   BSSR(Adminka)   =>    EJS
+  Modern FD.                          =>   SPA(USER)       =>    REACT
+*/
+
 // MIT TASK P
 function objectToArray(obj: Record<string, number>): [string, number][] {
   return Object.entries(obj);
