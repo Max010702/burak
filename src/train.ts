@@ -1,14 +1,23 @@
+// MIT TASK Q
+function hasProperty(obj: object, str: string): boolean {
+  return str in obj;
+}
+
+// Testlar:
+console.log(hasProperty({ name: "BMW", model: "M3" }, "model")); // true
+console.log(hasProperty({ name: "BMW", model: "M3" }, "year")); // false
+
 /* 
   Traditional Frontend Development.   =>   BSSR(Adminka)   =>    EJS
   Modern FD.                          =>   SPA(USER)       =>    REACT
 */
 
-// MIT TASK P
-function objectToArray(obj: Record<string, number>): [string, number][] {
-  return Object.entries(obj);
-}
+// // MIT TASK P
+// function objectToArray(obj: Record<string, number>): [string, number][] {
+//   return Object.entries(obj);
+// }
 
-console.log(objectToArray({ a: 10, b: 20 })); // [["a", 10], ["b", 20]]
+// console.log(objectToArray({ a: 10, b: 20 })); // [["a", 10], ["b", 20]]
 
 // // MIT TASK O
 // function calculateSumOfNumbers(arr: any[]): number {
