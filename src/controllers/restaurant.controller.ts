@@ -1,7 +1,12 @@
 import { Request, Response } from "express";
 import { T } from "../libs/types/command";
 import MemberService from "../models/Member.service";
-import { LoginInput, Member, MemberInput } from "../libs/types/member";
+import {
+  AdminRequest,
+  LoginInput,
+  Member,
+  MemberInput,
+} from "../libs/types/member";
 import { MemberType } from "../libs/enum/member.enum";
 
 const memberService = new MemberService();
@@ -35,7 +40,10 @@ restaurantController.getLogin = (req: Request, res: Response) => {
   }
 };
 
-restaurantController.processSignup = async (req: Request, res: Response) => {
+restaurantController.processSignup = async (
+  req: AdminRequest,
+  res: Response,
+) => {
   try {
     console.log("processSignup");
 
@@ -44,7 +52,10 @@ restaurantController.processSignup = async (req: Request, res: Response) => {
     const result = await memberService.processSignup(newMember);
     // TODO: SESSIONS AUTHENTICATION
 
-    res.send(result);
+    req.session.member = result;
+    req.session.save(function () {
+      res.send(result);
+    });
   } catch (err) {
     console.log("Error, processSignup:", err);
     res.send(err);
