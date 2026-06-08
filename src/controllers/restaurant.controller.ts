@@ -20,6 +20,7 @@ restaurantController.goHome = (req: Request, res: Response) => {
     // send | json | redirect | end | render
   } catch (err) {
     console.log("Error, goHome:", err);
+    res.redirect("/admin");
   }
 };
 
@@ -29,6 +30,7 @@ restaurantController.getSignup = (req: Request, res: Response) => {
     res.render("signup");
   } catch (err) {
     console.log("Error, goSignup:", err);
+    res.redirect("/admin");
   }
 };
 
@@ -38,6 +40,7 @@ restaurantController.getLogin = (req: Request, res: Response) => {
     res.render("login");
   } catch (err) {
     console.log("Error, goLogin:", err);
+    res.redirect("/admin");
   }
 };
 
@@ -51,7 +54,6 @@ restaurantController.processSignup = async (
     const newMember: MemberInput = req.body;
     newMember.memberType = MemberType.RESTAURANT;
     const result = await memberService.processSignup(newMember);
-    // TODO: SESSIONS AUTHENTICATION
 
     req.session.member = result;
     req.session.save(function () {
@@ -59,20 +61,47 @@ restaurantController.processSignup = async (
     });
   } catch (err) {
     console.log("Error, processSignup:", err);
-    res.send(err);
+    const message =
+      err instanceof Error ? err.message : Message.SOMETHING_WENT_WRONG;
+    res.send(
+      `<script> alert("${message}"); window.location.replace('admin/login') </script>`,
+    );
   }
 };
 
-restaurantController.processLogin = async (req: Request, res: Response) => {
+restaurantController.processLogin = async (
+  req: AdminRequest,
+  res: Response,
+) => {
   try {
     console.log("processLogin");
+
     const input: LoginInput = req.body;
     const result = await memberService.processLogin(input);
-    // TODO: SESSIONS AUTHENTICATION
 
-    res.send(result);
+    req.session.member = result;
+    req.session.save(function () {
+      res.send(result);
+    });
   } catch (err) {
     console.log("Error, processLogin:", err);
+    const message =
+      err instanceof Error ? err.message : Message.SOMETHING_WENT_WRONG;
+    res.send(
+      `<script> alert("${message}"); window.location.replace('admin/login') </script>`,
+    );
+  }
+};
+
+restaurantController.logout = async (req: AdminRequest, res: Response) => {
+  try {
+    console.log("logout");
+    req.session.destroy(function () {
+      res.redirect("/admin");
+    });
+  } catch (err) {
+    console.log("Error, processLogin:", err);
+    res.redirect("/admin");
   }
 };
 

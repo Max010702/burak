@@ -1,3 +1,10 @@
+/* 
+  Cookies:
+  request join
+  self destroy
+  
+*/
+
 // MIT TASK Q
 function hasProperty(obj: object, str: string): boolean {
   return str in obj;
