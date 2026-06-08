@@ -18,6 +18,7 @@ export enum Message {
   USED_NICK_PHONE = "You are inserting already used nick or phone!",
   NO_MEMBER_NICK = "No member with that member nick!",
   WRONG_PASSWORD = "Wrong password, please try again!",
+  NOT_AUTHENTICATED = "You are not authenticated, Please login first!",
 }
 
 class Errors extends Error {
@@ -25,9 +26,9 @@ class Errors extends Error {
   public message: Message;
 
   static standart = {
-    code: HttpCode.INTERNAL_SERVER_ERROR, 
+    code: HttpCode.INTERNAL_SERVER_ERROR,
     message: Message.SOMETHING_WENT_WRONG,
-  }
+  };
 
   constructor(statusCode: HttpCode, statusMessage: Message) {
     super();
