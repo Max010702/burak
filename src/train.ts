@@ -1,23 +1,33 @@
+// MIT TASK R
+function calculate(expression: string): number {
+  const [a, b] = expression.split("+").map(Number);
+  return a + b;
+}
+
+// Test
+console.log(calculate("1+2")); // 3
+console.log(calculate("1+3")); // 4
+
 /* 
   Cookies:
   request join
   self destroy
-  
+
 */
 
-// MIT TASK Q
-function hasProperty(obj: object, str: string): boolean {
-  return str in obj;
-}
+// // MIT TASK Q
+// function hasProperty(obj: object, str: string): boolean {
+//   return str in obj;
+// }
 
-// Testlar:
-console.log(hasProperty({ name: "BMW", model: "M3" }, "model")); // true
-console.log(hasProperty({ name: "BMW", model: "M3" }, "year")); // false
+// // Testlar:
+// console.log(hasProperty({ name: "BMW", model: "M3" }, "model")); // true
+// console.log(hasProperty({ name: "BMW", model: "M3" }, "year")); // false
 
-/* 
-  Traditional Frontend Development.   =>   BSSR(Adminka)   =>    EJS
-  Modern FD.                          =>   SPA(USER)       =>    REACT
-*/
+// /*
+//   Traditional Frontend Development.   =>   BSSR(Adminka)   =>    EJS
+//   Modern FD.                          =>   SPA(USER)       =>    REACT
+// */
 
 // // MIT TASK P
 // function objectToArray(obj: Record<string, number>): [string, number][] {
