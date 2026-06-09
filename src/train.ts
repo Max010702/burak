@@ -1,12 +1,30 @@
-// MIT TASK R
-function calculate(expression: string): number {
-  const [a, b] = expression.split("+").map(Number);
-  return a + b;
+// MIT TASK S
+
+function missingNumber(nums: number[]): number {
+  const n = nums.length;
+  const expectedSum = (n * (n + 1)) / 2;
+  const actualSum = nums.reduce((acc, num) => acc + num, 0);
+  return expectedSum - actualSum;
 }
 
-// Test
-console.log(calculate("1+2")); // 3
-console.log(calculate("1+3")); // 4
+console.log(missingNumber([3, 0, 1])); // 2
+
+/*  Validation:
+  Frontend validation,
+  Backend validation
+  Database validation
+
+*/
+
+// // MIT TASK R
+// function calculate(expression: string): number {
+//   const [a, b] = expression.split("+").map(Number);
+//   return a + b;
+// }
+
+// // Test
+// console.log(calculate("1+2")); // 3
+// console.log(calculate("1+3")); // 4
 
 /* 
   Cookies:
