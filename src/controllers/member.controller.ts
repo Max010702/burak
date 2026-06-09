@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { T } from "../libs/types/command";
+import { T } from "../libs/types/common";
 import MemberService from "../models/Member.service";
 import { LoginInput, Member, MemberInput } from "../libs/types/member";
 import Errors from "../libs/Errors";
