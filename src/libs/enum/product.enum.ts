@@ -3,6 +3,7 @@ export enum ProductSize {
   NORMAL = "NORMAL",
   LARGE = "LARGE",
   SET = "SET",
+  PAUSE = "PAUSE",
 }
 
 export enum ProductVolume {
