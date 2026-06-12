@@ -1,13 +1,20 @@
-// MIT TASK S
-
-function missingNumber(nums: number[]): number {
-  const n = nums.length;
-  const expectedSum = (n * (n + 1)) / 2;
-  const actualSum = nums.reduce((acc, num) => acc + num, 0);
-  return expectedSum - actualSum;
+// // MIT TASK t
+function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
+  return [...arr1, ...arr2].sort((a, b) => a - b);
 }
 
-console.log(missingNumber([3, 0, 1])); // 2
+console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
+
+// // MIT TASK S
+
+// function missingNumber(nums: number[]): number {
+//   const n = nums.length;
+//   const expectedSum = (n * (n + 1)) / 2;
+//   const actualSum = nums.reduce((acc, num) => acc + num, 0);
+//   return expectedSum - actualSum;
+// }
+
+// console.log(missingNumber([3, 0, 1])); // 2
 
 /*  Validation:
   Frontend validation,
