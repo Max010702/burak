@@ -44,21 +44,26 @@ productController.createNewProduct = async (
     );
   } catch (err) {
     console.log("Error, createNewProduct: ", err);
-    if (err instanceof Errors) res.status(err.code).json(err);
-    else res.status(Errors.standart.code).json(Errors.standart);
+    const message =
+      err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG;
+    res.send(
+      `<script> alert("Sucessfull creation!"); window.location.replace('admin/product/all') </script>`,
+    );
   }
 };
 
 productController.updateChosenProduct = async (req: Request, res: Response) => {
   try {
     console.log("updateChosenProduct");
+    const id = req.params.id as string;
+
+    const result = await productService.updateChosenProduct(id, req.body);
+
+    res.status(HttpCode.OK).json({ data: result });
   } catch (err) {
     console.log("Error, updateChosenProduct:", err);
-    const message =
-      err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG;
-    res.send(
-      `<script> alert("Sucessfull creation!"); window.location.replace('admin/product/all') </script>`,
-    );
+    if (err instanceof Errors) res.status(err.code).json(err);
+    else res.status(Errors.standart.code).json(Errors.standart);
   }
 };
 

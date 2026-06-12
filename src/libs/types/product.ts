@@ -12,11 +12,11 @@ export interface Product {
   productName: string;
   productPrice: number;
   productLeftCount: number;
-  productSize?: ProductSize;
-  productVolume?: number;
+  productSize: ProductSize;
+  productVolume: number;
   productDesc?: string;
-  productImages?: string[];
-  productView?: number;
+  productImages: string[];
+  productView: number;
 }
 
 export interface ProductInput {
@@ -25,6 +25,20 @@ export interface ProductInput {
   productName: string;
   productPrice: number;
   productLeftCount: number;
+  productSize?: ProductSize;
+  productVolume?: number;
+  productDesc?: string;
+  productImages?: string[];
+  productView?: number;
+}
+
+export interface ProductUpdateInput {
+  _id?: ObjectId;
+  productStatus?: ProductStatus;
+  productCollection?: ProductCollection;
+  productName?: string;
+  productPrice?: number;
+  productLeftCount?: number;
   productSize?: ProductSize;
   productVolume?: number;
   productDesc?: string;
