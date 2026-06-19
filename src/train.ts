@@ -1,9 +1,24 @@
-// MIT TASK U
-function sumOdds(n: number): number {
-  return Math.floor((n + 1) / 2);
+// MIT TASK V
+
+function countChars(str: string): Record<string, number> {
+  return str.split("").reduce(
+    (word, char) => {
+      word[char] = (word[char] || 0) + 1;
+      return word;
+    },
+    {} as Record<string, number>,
+  );
 }
 
-console.log(sumOdds(9));
+// Test
+console.log(countChars("hello")); // { h: 1, e: 1, l: 2, o: 1 }
+
+// // MIT TASK U
+// function sumOdds(n: number): number {
+//   return Math.floor((n + 1) / 2);
+// }
+
+// console.log(sumOdds(9));
 
 // // // MIT TASK t
 // function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
