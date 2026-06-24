@@ -1,17 +1,31 @@
-// MIT TASK V
+// MIT TASK W
 
-function countChars(str: string): Record<string, number> {
-  return str.split("").reduce(
-    (word, char) => {
-      word[char] = (word[char] || 0) + 1;
-      return word;
-    },
-    {} as Record<string, number>,
-  );
+function chunkArray(array: any[], size: number): any[][] {
+  const result: any[][] = [];
+
+  for (let i = 0; i < array.length; i += size) {
+    result.push(array.slice(i, i + size));
+  }
+
+  return result;
 }
 
-// Test
-console.log(countChars("hello")); // { h: 1, e: 1, l: 2, o: 1 }
+console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
+
+// // MIT TASK V
+
+// function countChars(str: string): Record<string, number> {
+//   return str.split("").reduce(
+//     (word, char) => {
+//       word[char] = (word[char] || 0) + 1;
+//       return word;
+//     },
+//     {} as Record<string, number>,
+//   );
+// }
+
+// // Test
+// console.log(countChars("hello")); // { h: 1, e: 1, l: 2, o: 1 }
 
 // // MIT TASK U
 // function sumOdds(n: number): number {
