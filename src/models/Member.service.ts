@@ -81,7 +81,7 @@ class MemberService {
     const member = await this.memberModel
       .findOne(
         { memberNick: input.memberNick },
-        { id: 1, memberNick: 1, memberPassword: 1 },
+        { memberNick: 1, memberPassword: 1 }, //projection
       )
       .exec();
     if (!member) throw new Errors(HttpCode.NOT_FOUND, Message.NO_MEMBER_NICK);

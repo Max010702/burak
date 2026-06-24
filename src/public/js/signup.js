@@ -1,5 +1,6 @@
 console.log("Signup frontend javascript file");
 
+// validation
 $(function () {
   const fileTarget = $(".file-box .upload-hidden");
   let filename;
@@ -32,7 +33,7 @@ function validateSignupForm() {
   const confirmPassword = $(".confirm-password").val();
 
   if (
-    memberNick == "" ||
+    memberNick === "" ||
     memberPhone === "" ||
     memberPassword === "" ||
     confirmPassword === ""
