@@ -1,16 +1,41 @@
-// MIT TASK W
+// MIT TASK X
+function countOccurrences(obj: Record<string, any>, key: string): number {
+  let count = 0;
 
-function chunkArray(array: any[], size: number): any[][] {
-  const result: any[][] = [];
-
-  for (let i = 0; i < array.length; i += size) {
-    result.push(array.slice(i, i + size));
+  for (const k in obj) {
+    if (k === key) count++;
+    if (typeof obj[k] === "object" && obj[k] !== null) {
+      count += countOccurrences(obj[k], key);
+    }
   }
 
-  return result;
+  return count;
 }
 
-console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
+// Test
+const car = {
+  model: "Bugatti",
+  steer: {
+    model: "HANKOOK",
+    size: 30,
+  },
+};
+
+console.log(countOccurrences(car, "model"));
+
+// // MIT TASK W
+
+// function chunkArray(array: any[], size: number): any[][] {
+//   const result: any[][] = [];
+
+//   for (let i = 0; i < array.length; i += size) {
+//     result.push(array.slice(i, i + size));
+//   }
+
+//   return result;
+// }
+
+// console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
 
 // // MIT TASK V
 

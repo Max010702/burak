@@ -1,5 +1,3 @@
-// const { response } = require("express");
-
 console.log("Products frontend javascript file");
 
 $(function () {
