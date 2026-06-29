@@ -1,27 +1,34 @@
-// MIT TASK X
-function countOccurrences(obj: Record<string, any>, key: string): number {
-  let count = 0;
-
-  for (const k in obj) {
-    if (k === key) count++;
-    if (typeof obj[k] === "object" && obj[k] !== null) {
-      count += countOccurrences(obj[k], key);
-    }
-  }
-
-  return count;
+// MIT TASK Y
+function findIntersection(arr1: number[], arr2: number[]): number[] {
+  return arr1.filter((item) => arr2.includes(item));
 }
 
-// Test
-const car = {
-  model: "Bugatti",
-  steer: {
-    model: "HANKOOK",
-    size: 30,
-  },
-};
+console.log(findIntersection([1, 2, 3], [3, 2, 0]));
 
-console.log(countOccurrences(car, "model"));
+// // MIT TASK X
+// function countOccurrences(obj: Record<string, any>, key: string): number {
+//   let count = 0;
+
+//   for (const k in obj) {
+//     if (k === key) count++;
+//     if (typeof obj[k] === "object" && obj[k] !== null) {
+//       count += countOccurrences(obj[k], key);
+//     }
+//   }
+
+//   return count;
+// }
+
+// // Test
+// const car = {
+//   model: "Bugatti",
+//   steer: {
+//     model: "HANKOOK",
+//     size: 30,
+//   },
+// };
+
+// console.log(countOccurrences(car, "model"));
 
 // // MIT TASK W
 

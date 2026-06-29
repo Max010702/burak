@@ -31,6 +31,7 @@ routerAdmin.post(
   makeUploader("products").array("productImages", 5), // function
   productController.createNewProduct,
 );
+
 routerAdmin.post(
   "/product/:id",
   restaurantController.verifyRestaurant,
