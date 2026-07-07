@@ -1,8 +1,6 @@
 import dotenv from "dotenv";
 dotenv.config();
-
 // CLUSTER => DATABASE => COLLECTION => DOCUMENT
-
 import mongoose from "mongoose";
 import app from "./app";
 
