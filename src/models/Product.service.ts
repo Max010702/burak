@@ -1,6 +1,6 @@
 import { T } from "../libs/types/common";
 import { shapeIntoMongooseObjectId } from "../libs/config";
-import { ProductStatus } from "../libs/enum/product.enum";
+import { ProductStatus } from "../libs/enums/product.enum";
 import Errors, { HttpCode, Message } from "../libs/Errors";
 import {
   Product,

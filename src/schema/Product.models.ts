@@ -4,7 +4,7 @@ import {
   ProductSize,
   ProductStatus,
   ProductVolume,
-} from "../libs/enum/product.enum";
+} from "../libs/enums/product.enum";
 
 const productSchema = new Schema(
   {
